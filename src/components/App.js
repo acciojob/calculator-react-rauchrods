@@ -3,12 +3,19 @@ import "../styles/App.css";
 function App() {
 
     let [scrval,setScrval] = useState("");
+    let [ans,setAns] = useState(0);
 
     function setscrvalfunc(e){
-       
-        // console.log(e.target.innerText);
-
         setScrval(scrval + e.target.innerText);
+    }
+
+    function calculate(){
+       let result = eval(scrval)
+       setScrval(result);
+    }
+
+    function clearscr(){
+        setScrval("");
     }
 
 
@@ -19,7 +26,7 @@ function App() {
                    <td colSpan={4}>{scrval}</td>
                 </tr>
                 <tr>
-                    <td onClick={setscrvalfunc}>C</td>
+                    <td onClick={clearscr}>C</td>
                     <td onClick={setscrvalfunc}>/</td>
                     <td onClick={setscrvalfunc}>*</td>
                     <td onClick={setscrvalfunc}>-</td>
@@ -39,7 +46,7 @@ function App() {
                     <td onClick={setscrvalfunc}>1</td>
                     <td onClick={setscrvalfunc}>2</td>
                     <td onClick={setscrvalfunc}>3</td>
-                    <td rowSpan={2} onClick={setscrvalfunc}>=</td>
+                    <td rowSpan={2} onClick={calculate}>=</td>
                 </tr>
                 <tr>
                     <td onClick={setscrvalfunc}>0</td>
