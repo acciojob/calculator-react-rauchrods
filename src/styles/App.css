@@ -10,3 +10,24 @@ button{
     justify-content: center;
     align-items: center;
 }
+table{
+    border-collapse: collapse;
+    width: 40%;
+    text-align: center;
+}
+
+table, td{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+tr{
+    height: 30px;
+    background-color: #CAD2C5; 
+}
+.screen{
+    height: 40px;
+    background-color: #2B293D;
+    color: white;
+    cursor:default;
+}
