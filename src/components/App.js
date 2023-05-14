@@ -3,15 +3,19 @@ import "../styles/App.css";
 function App() {
 
     let [scrval,setScrval] = useState("");
-    let [ans,setAns] = useState(0);
 
     function setscrvalfunc(e){
         setScrval(scrval + e.target.innerText);
     }
 
     function calculate(){
-       let result = eval(scrval)
-       setScrval(result);
+        try {
+            let result = eval(scrval)
+            setScrval(result);
+        } catch (error) {
+            setScrval("Error");
+        }
+       
     }
 
     function clearscr(){
